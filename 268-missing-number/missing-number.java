@@ -1,14 +1,17 @@
 class Solution {
     public static int missingNumber(int[] nums) {
      int n = nums.length;
-    int  expectedsum=(n*(n+1))/2;
-     int actualsum=0;
+    
+     int allXOR=0;
+     for(int i=0;i<=n;i++){
+        allXOR=allXOR^i;
+     }
      for (int num:nums)
      {
-        actualsum+=num;
+        allXOR=allXOR^num;
     
      }
-     return expectedsum-actualsum  ;
+     return allXOR ;
     }
     public static void main(String[]args)
     {
